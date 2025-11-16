@@ -6,7 +6,7 @@ using ThinkerAPI;
 
 namespace BartInBBPlus
 {
-    [BepInPlugin("starrie.bbplus.bart", "Bart in BB+", "2.0.0.0")]
+    [BepInPlugin("starrie.bbplus.bart", "Bart in BB+", "2.0.0")]
 
     [BepInDependency("thinkerAPI")]
 
@@ -21,7 +21,9 @@ namespace BartInBBPlus
             {
                 BasePlugin.Instance = this;
             }
+            this.ModAssets = new MassObjectHolder("starrie.bbplus.bart");
         }
     public static BasePlugin Instance;
+     public MassObjectHolder ModAssets;
     }
     }
