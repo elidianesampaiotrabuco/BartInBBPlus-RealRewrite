@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using BartInBBPlus;
+using BepInEx;
 
 using HarmonyLib;
 
@@ -16,7 +17,12 @@ namespace BartInBBPlus
         {
             Harmony harmony = new Harmony("starrie.bbplus.bart");
 
-            harmony.PatchAll();
+            bool flag = BasePlugin.Instance == null;
+            if (flag)
+            {
+                BasePlugin.Instance = this;
+            }
         }
+    public static BasePlugin Instance;
     }
-}
+    }
